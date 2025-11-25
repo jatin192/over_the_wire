@@ -1,0 +1,35 @@
+$ pwd
+/home/bandit1
+
+$ ls
+-
+
+$ pwd
+/home/bandit1
+
+$ cat /home/bandit1/-
+263JGJPfgU6LtdEvgfWU1XP5yac29mFx
+
+$ cat ./-
+263JGJPfgU6LtdEvgfWU1XP5yac29mFx
+
+
+___________________________________________________ Learning ______________________________________________________________
+
+
+-
+-file
+--file
+
+
+Linux thinks anything starting with - is an option/flag, not a filename.
+-       =       STDIN / STDOUT         =        Input from keyboard -> Output to screen  (Not a file)
+
+
+.       =       current directory
+./-     =       exact path → Linux stops treating it like an option
+
+
+
+Solution 
+Specify the full location of the file
