@@ -14,9 +14,9 @@ $ cat ./-
 263JGJPfgU6LtdEvgfWU1XP5yac29mFx
 
 
-___________________________________________________ Learning ______________________________________________________________
+____________________________________________________________ Learning ____________________________________________________________
 
-
+Dashed filename     =   is simply a normal file whose name starts with a hyphen (-),
 -
 -file
 --file
@@ -33,3 +33,37 @@ Linux thinks anything starting with - is an option/flag, not a filename.
 
 Solution 
 Specify the full location of the file
+
+
+_____________________________________________________ Dangerous Dashed Filenames ________________________________________________________
+
+
+🔥 1️⃣ File named -rf
+
+        If someone runs:  $ rm *      -----------------So the command becomes----------------->        $ rm -rf file1 file2
+
+        -   This will recursively delete everything, and the user didn’t even type -rf.
+        -   This is how attackers wipe systems.
+
+
+🔥 2️⃣ File named --no-preserve-root
+
+        If someone runs:  $ rm *      -----------------So the command becomes----------------->        $ rm ---no-preserve-root
+
+        -   (--no-preserve-root) allows  $ rm -rf /   to delete root filesystem (normally blocked)
+        -   This is extremely dangerous.
+        -   Delete the entire filesystem including all user data + system files, effectively making the system unusable
+
+
+
+⚠️ Why these filenames are dangerous
+
+They can cause:
+
+✔ unintended command-line flags
+✔ data loss
+✔ system deletion
+✔ infinite loops
+✔ breaking backups
+✔ breaking deployment scripts
+✔ turning harmless commands into destructive ones
