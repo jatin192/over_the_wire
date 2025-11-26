@@ -1,0 +1,19 @@
+find . -type f -exec cat {} \;
+
+
+find . -type f -exec sh -c '
+  echo "-------------------------- $1 ----------------------------"
+  cat "$1"
+  echo
+' _ {} \;
+
+
+for f in $(find . -type f); do
+  echo "----- $f -----"
+  cat "$f"
+  echo
+done
+
+
+
+4oQYVPkxZOOEOO5pTW81FB8j8lxXGUQw
