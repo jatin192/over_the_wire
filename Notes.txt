@@ -16,3 +16,17 @@ They run $namp like its a prayer
 They wrtie Bash scripts that look like spells.
 
 You did'nt just learn Linux. You became Linux
+
+
+Play,break,fix,repeat  -Terminal
+
+Linux is not design for convenience But for control
+
+
+
+
+
+_______________________________________________  Pending ___________________________________________________________________________________________________
+
+
+bandit1 dangerous command test on vm or docker

@@ -13,6 +13,13 @@ $ cat /home/bandit1/-
 $ cat ./-
 263JGJPfgU6LtdEvgfWU1XP5yac29mFx
 
+$ cat "$(pwd)/-"                      
+263JGJPfgU6LtdEvgfWU1XP5yac29mFx
+
+
+$ cat "-"                                      ❌  (Reason : see in bandit2)
+$ cat "./-"                                    ✅
+263JGJPfgU6LtdEvgfWU1XP5yac29mFx
 
 ____________________________________________________________ Learning ____________________________________________________________
 
@@ -33,7 +40,9 @@ Linux thinks anything starting with - is an option/flag, not a filename.
 
 Solution 
 Specify the full location of the file
-
+                                                    ******************************** 
+                                                    *       $ cat "$(pwd)/-"       *
+                                                    ********************************
 
 _____________________________________________________ Dangerous Dashed Filenames ________________________________________________________
 
