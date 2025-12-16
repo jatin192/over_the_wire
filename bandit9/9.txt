@@ -1,0 +1,6 @@
+wc -l data.txt                             # Number of Rows/Line
+sed -n '1,7p' data.txt                     # understand structure
+strings data.txt | grep "="                # Extracts human-readable text from a binary file + Removes all non-printable garbage  -> grep
+
+______________________________________________________________________________________________________________________________
+FGUW5ilLVJrxX9kMYMmlN4MgbpfMiqey

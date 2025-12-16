@@ -1,0 +1,20 @@
+
+1. Preview file      
+2. Identify structure 
+3. Pick tool
+4. Extract exactly what you need
+
+
+
+$   wc -l data.txt                               # Number of Rows/Line
+$   sed -n '1,10p' data.txt                      # understand structure
+$   grep -rnH "millionth" data.txt 
+$   awk '$1 == "millionth" {print $2}' data.txt  # Too many columns + Long Rows
+______________________________________________________________________________________________________________________________
+dfwvzFQi4mU0wfNbFOe9RoWskMLg7eEc
+
+
+-r	recursive
+-n	line number
+-H	show filename
+-h  hide filename

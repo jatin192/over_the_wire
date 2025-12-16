@@ -1,0 +1,11 @@
+wc -l data.txt                              # Number of Rows/Line
+sed -n '1,10p' data.txt                     # understand structure
+cat data.txt
+
+base64 --decode data.txt
+
+-d  = --decode
+
+
+______________________________________________________________________________________________________________________________
+dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr

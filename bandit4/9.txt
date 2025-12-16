@@ -1,0 +1,34 @@
+$ file ./*
+$ cat ./*
+
+$ for i in ./*; 
+do
+  echo "__________________________ $i __________________________"
+  file "$i"
+done
+
+$ find . -type f -exec file {} \;|  grep ASCII
+$ find . -type f -exec file {} \;|  grep -i aScIi 
+
+
+___________________________________________ Explanation ______________________________________________________________________________________________
+
+./    =   current dir
+*     =   all file
+./*   =   all files in the current dir
+
+
+
+$ find      <path>        <filters>             <actions>
+$ find        .            -type f           -exec file {} \;       |  grep ASCII
+
+
+
+-type f =   Filter                        = Only show files
+{}      =   placeholder for the filename
+\;      =   end of the -exec command
+-i      =   case-insensitive
+
+______________________________________________________________________________________________
+
+4oQYVPkxZOOEOO5pTW81FB8j8lxXGUQw

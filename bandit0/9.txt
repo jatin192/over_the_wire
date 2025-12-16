@@ -1,0 +1,15 @@
+$ ssh username@remote_host -p 2222
+The password you are looking for is: ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If
+ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If
+
+
+
+___________________________________________________ Learning ______________________________________________________________
+
+$ ssh username@remote_host -p 2222
+
+
+  ssh
+
+  Secure Shell is a protocol used to securely log onto remote systems.
+  It can be used for logging or executing commands on a remote server

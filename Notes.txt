@@ -1,0 +1,32 @@
+Dot not try to remember 200 commands from a cheat-sheet. That's not learning. That's a cyber self-harm
+Do not copy-paste random scripts from reddit. That's not HACKING
+
+
+Why bother with all this pain? Why no just stick to windows or macos and call it a day?
+Because Linux is the foundation or literally everything in HACKING. 
+Every 
+pentesting tool,
+every CTF,
+every web server,
+every shell
+-Linux is the default
+
+
+They run $namp like its a prayer
+They wrtie Bash scripts that look like spells.
+
+You did'nt just learn Linux. You became Linux
+
+
+Play,break,fix,repeat  -Terminal
+
+Linux is not design for convenience But for control
+
+
+
+
+
+_______________________________________________  Pending ___________________________________________________________________________________________________
+
+
+bandit1 dangerous command test on vm or docker

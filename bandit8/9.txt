@@ -1,0 +1,18 @@
+
+$   sort data.txt | uniq --unique                                           # Display only unique lines
+$   sort data.txt | uniq --count | sort --numeric-sort                      # Lines with Lowest count come first
+
+or 
+
+$   sort data.txt | uniq -u
+$   sort data.txt | uniq -c | sort -n
+
+
+-u   --unique
+-c   --count
+-n   --numeric-sort
+
+____________________________________________________________________________________________________________________________
+
+4CKMh1JI91bUIZZPXDqGanal4xvAg0JM
+

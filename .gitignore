@@ -1,0 +1,12 @@
+
+# LibreOffice lock files
+.~lock.*#
+*.tmp
+*.bak
+*.~lock 
+
+
+*.private
+id_rsa
+sshkey.private
+bandit13/sshkey.private

@@ -1,0 +1,24 @@
+bandit13@bandit:~$  chmod 600 sshkey.private 
+    chmod: changing permissions of 'sshkey.private': Operation not permitted
+
+
+
+✅ Copying the key to your local machine and SSH-ing from there is an ACCEPTED and INTENDED solution.
+
+
+
+| PERMISSIONS    | LINKS | OWNER    | GROUP    | SIZE | DATE         | FILENAME       |
+| -------------- | ----- | -------- | -------- | ---- | ------------ | -------------- |
+| 4 `-rw-r-----` | 1     | bandit14 | bandit13 | 1679 | Oct 14 09:26 | sshkey.private |       (Given)
+| 4 `-rw-r-----` | 1     | bandit13 | bandit13 | 1679 | Dec 16 11:45 | sshkey.private |       (inside /tmp/tmp.ddTmUUIbKU using mktemp -d)
+| 4 `-rw-------` | 1     | bandit13 | bandit13 | 1679 | Dec 15 18:19 | sshkey.private |       (after chmod 600 sshkey.private)
+
+
+Ownership > Permissions > Access
+
+______________________________________________________________________________________________________________________________
+
+MU4VWeTyJk8ROof1qqmcBPaLh7lDCPvS
+
+
+

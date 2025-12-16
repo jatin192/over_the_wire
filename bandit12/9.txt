@@ -1,0 +1,114 @@
+______________________________________________________________________________________________________________________________
+ASCII hex text
+   ↓ xxd -r
+Binary file
+   ↓ file
+Compression?
+   ↓ decompress
+            1️⃣ GZIP              gunzip            extension = .gz               
+            2️⃣ BZIP2             bunzip2           extension = .bz2             
+            3️⃣ TAR               tar -xf           extension = .tar 
+            🔴 Never guess compression — Always identify it using $ file 
+Repeat
+______________________________________________________________________________________________________________________________
+
+$   mktemp -d
+$   cd /tmp/tmp.....
+$   cp ~/data.txt  /tmp/tmp.....
+$   file data.txt
+$   ls
+$   xxd -r data.txt > data      # ASCII   ->   Binary
+$   file ./*
+______________________________________________________________________________________________________________________________
+
+Choices of decompress / archive tools  
+
+1️⃣ GZIP
+gunzip            extension = .gz               
+
+2️⃣ BZIP2
+bunzip2           extension = .bz2             
+
+3️⃣ TAR
+tar -xf           extension = .tar              
+______________________________________________________________________________________________________________________________
+
+1️⃣ GZIP
+mv data data_1.gz               # Rename     :      to set correct extension so gunzip detects gzipt 
+gunzip data_1.gz                # Decompress :      gzip layer → 'data'
+ls
+file data_1
+
+
+
+2️⃣ BZIP2
+mv data_1 data_2.bz2            # Rename     :      to set correct extension so bunzip2 detects bzip2
+bunzip2 data_2.bz2              # Decompress :      bzip2 layer → 'data'
+ls
+file data_2
+
+
+1️⃣ GZIP
+mv data_2 data_3.gz             # Rename     :      to set correct extension so gunzip detects gzipt 
+gunzip data_3.gz                # Decompress :      gzip layer → 'data'
+ls
+file data_3
+
+
+3️⃣ TAR
+mv data_3 data_4.tar            # Rename     :      to set correct extension so tar detect archive format
+tar -xf data_4.tar              # Extract    :      tar archive -> produces new file(s)
+ls 
+file data5.bin
+
+
+3️⃣ TAR
+mv data5.bin data_5.tar         # Rename     :      to set correct extension so tar detect archive format
+tar -xf data_5.tar              # Extract    :      tar archive -> produces new file(s)
+ls 
+file data_6.bin
+
+2️⃣ BZIP2
+mv data6.bin data_6.bz2         # Rename     :      to set correct extension so bunzip2 detects bzip2
+bunzip2 data_6.bz2              # Decompress :      bzip2 layer → 'data'
+ls
+file data_6
+
+3️⃣ TAR
+mv data_6 data_7.tar            # Rename     :      to set correct extension so tar detect archive format
+tar -xf data_7.tar              # Extract    :      tar archive -> produces new file(s)
+ls 
+file data8.bin
+
+
+1️⃣ GZIP
+mv data8.bin data_8.gz          # Rename     :      to set correct extension so gunzip detects gzipt 
+gunzip data_8.gz                # Decompress :      gzip layer → 'data'
+ls
+file data_8
+
+$ cat data_8
+The password is FO5dwFsc0cbaIiH0h8J2eUks2vdTDwAn
+_____________________________________________________________________________________________________________________________
+➡️ Why mktemp -d?
+
+Using mkdir in scripts is dangerous:
+❌ Vulnerability: TOCTOU attack
+
+Attacker can:
+                👉Guess directory name
+                👉Create a symlink
+                👉Trick your script into overwriting files
+
+mktemp -d
+                👉Race-condition safe
+                👉Random name = Guaranteed not to exist already
+                👉Best for scripts & security work
+
+______________________________________________________________________________________________________________________________
+
+GK
+
+xxd -r data.txt > data      # create data file contains the binary file
+vs
+xxd -r data.txt data        # data file is not created + just printing on screen

@@ -1,0 +1,28 @@
+Two solution
+
+1.______________________________________________________________________________________________________________________________ 
+c++ solution -> see 1.cpp file
+
+2.______________________________________________________________________________________________________________________________ 
+$ cat data.txt 
+$ tr 'A-Za-z' 'N-ZA-Mn-za-m' < data.txt
+
+    A-Z             a-z
+    ↓               ↓ 
+    N-Z A-M       n-z a-m
+
+
+tr = translate characters
+
+a b c d e f g h i j k l m n o p q r s t u v w x y z
+↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓
+n o p q r s t u v w x y z a b c d e f g h i j k l m
+
+Note : Dont think like string rotated by 13 positions NO 
+
+____________________________________________________________________________________________________________________________
+Gur cnffjbeq vf 7k16JArUVv5LxVuJfsSVdbbtaHGlw9D4
+The password is 7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4
+
+
+
