@@ -3,3 +3,28 @@ $   openssl s_client -connect localhost:30001
     8xCjnmgoKbGLhHFAZlGE5Tmu4M2tKJQo
     Correct!
     kSkvUpMQ7lBYyCM4GBPvCvT1BfWRy0Dx
+
+
+
+Level       Tool                         Concept      
+14 → 15     nc                      →     plain TCP client(❌ encrypted)  
+15 → 16     openssl s_client        →     TCP + TLS client(✅ encrypted)
+
+
+_____________________________________________________
+| Tool               | Analogy                      |
+| __________________ | ____________________________ |
+| `nc`               | Talking loudly               |
+| `openssl s_client` | Talking inside a locked room |
+| TLS                | The lock                     |
+|____________________|______________________________|
+
+
+OpenSSL     =   cryptographic toolkit
+SSL         =   TLS (Modern name)       =   security layer
+
+
+You ----password----> Server        (Without SSL)
+You --encrypted data--> Server      (With SSL)
+
+
