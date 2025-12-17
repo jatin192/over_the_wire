@@ -1,1 +1,58 @@
-MU4VWeTyJk8ROof1qqmcBPaLh7lDCPvS
+$   cat /etc/bandit_pass/bandit14
+$   nc localhost 30000
+    MU4VWeTyJk8ROof1qqmcBPaLh7lDCPvS
+    Correct!
+    8xCjnmgoKbGLhHFAZlGE5Tmu4M2tKJQo
+
+8xCjnmgoKbGLhHFAZlGE5Tmu4M2tKJQo
+
+
+______________________________________________________________________________________________________________________________
+nc = netcat
+nc <host> <port>
+
+You ────text────▶ Port
+You ◀───text───── Port
+
+
+[bandit14] ──TCP──▶ localhost:30000
+
+
+🔑 This teaches:
+
+1. What localhost means
+2. What a port is
+
+
+1️⃣ What localhost means
+localhost means “this same computer”
+localhost                               → IP address 127.0.0.1    +    It never leaves your machine   +    No internet involved
+
+
+Your computer
+ ├── CPU
+ ├── Memory
+ ├── Disk
+ └── Network stack
+      └── 127.0.0.1 (localhost)
+
+When you connect to localhost, you’re talking to your own machine, just through the network system.
+
+
+
+
+2️⃣ What a port is
+A port is a number that identifies which program you want to talk to.
+
+IP = which computer
+Port = which program on that computer
+
+IP address  → Building address
+Port number → Apartment number
+“Apartment 30000 in this building”
+
+
+
+
+why we need localhost
+localhost exists so programs on the same machine can talk to each other safely, fast, and without the internet ?
