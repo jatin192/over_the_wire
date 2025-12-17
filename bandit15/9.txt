@@ -4,7 +4,7 @@ $   openssl s_client -connect localhost:30001
     Correct!
     kSkvUpMQ7lBYyCM4GBPvCvT1BfWRy0Dx
 
-
+______________________________________________________________________________________________________________________________
 
 Level       Tool                         Concept      
 14 → 15     nc                      →     plain TCP client(❌ encrypted)  
