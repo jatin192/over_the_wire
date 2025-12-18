@@ -6,7 +6,7 @@ $   ssh bandit0@bandit.labs.overthewire.org -p 2220
 
 ___________________________________________________ Learning ______________________________________________________________
 
-$ ssh username@remote_host -p 2222
+$ ssh username@remote_host -p 2220
 
 
   ssh
