@@ -5,7 +5,8 @@ $   for i in {31000..32000}; do
 
 $   nmap -p 31000-32000 localhost
 $   openssl s_client -connect localhost:31790 ❌  # can't read interactive stdin properly -> expects the password to arrive immediately on connection
-$   echo "kSkvUpMQ7lBYyCM4GBPvCvT1BfWRy0Dx" | openssl s_client -connect localhost:31790 -quiet ✅   # pipe the password directly into the SSL connection
+$   echo "kSkvUpMQ7lBYyCM4GBPvCvT1BfWRy0Dx" | openssl s_client -connect localhost:31790 -quiet             # check each PORT 1by1 now we are checking 31790   
+                                                                                                                    #  pipe the password directly into the SSL connection
 
 
 1️⃣ $     echo |
@@ -18,6 +19,7 @@ So:
 
 ➡ Runs COMMAND
 ➡ Kills it after 1 second
+➡ Some ports are open but don’t respond or hang during SSL handshake that Why needed here?
 
 
 3️⃣ 2>/dev/null
@@ -28,8 +30,5 @@ Throw away all error messages -> 🧠 Keeps output clean so grep works reliably
 
 4️⃣-q  → quiet mode
 
-
-openssl s_client -connect localhost:31518
-openssl s_client -connect localhost:31790
 
 kSkvUpMQ7lBYyCM4GBPvCvT1BfWRy0Dx
