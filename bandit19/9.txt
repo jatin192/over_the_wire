@@ -1,0 +1,32 @@
+$  ls -las bandit20-do ; file bandit20-do         
+   PERMISSIONS          OWNER      GROUP       SIZE     DATE           FILENAME
+   16 -rwsr-x--- 1      bandit20   bandit19    14884    Oct 14 09:26   bandit20-do
+         ^
+         s
+👉 That s means setuid
+
+
+$  ./bandit20-do cat /etc/bandit_pass/bandit20         # 🔥 This is controlled privilege escalation
+
+______________________________________________________________________________________________________________________________
+0qXahG8ZjOVMN9Ghs7iOWsCfZyXOUbYO
+
+
+setuid
+👉 When a program is executed, it runs with the permissions of the file’s owner instead of the user who ran it
+   Owner   = bandit20
+   You     = bandit19
+
+Privilege Escalation
+👉 A program runs with more permissions than the user who started it
+
+Uncontrolled Privilege Escalation (BAD 🚨)
+👉 This is a vulnerability
+
+Controlled Privilege Escalation (GOOD ✅)
+👉The system allows a user to temporarily gain higher privileges for a specific task only
+
+
+🧠 setuid allows a program to run with the permissions of its owner, enabling controlled privilege escalation for specific tasks
+
+./ = run this executable from the current directory
