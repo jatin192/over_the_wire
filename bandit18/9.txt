@@ -1,7 +1,7 @@
-ssh bandit18@bandit.labs.overthewire.org -p 2220 ls -las                            #  Log in -> execute ls -> then exit
-ssh bandit18@bandit.labs.overthewire.org -p 2220 cat readme                         #  Log in -> execute ls -> then exit
+ssh bandit18@bandit.labs.overthewire.org -p 2220 ls -las                            #  Log in   --->      execute ls   --->   then exit
+ssh bandit18@bandit.labs.overthewire.org -p 2220 cat readme                         #  Log in   --->    execute cat readme   --->   then exit
 
-$ ssh bandit18@bandit.labs.overthewire.org -p 2220 "ls -las; cat readme "           #  Log in -> execute ls -> then exit
+$ ssh bandit18@bandit.labs.overthewire.org -p 2220 "ls -las; cat readme "           #  Log in   --->  execute ls;cat readme   --->   then exit
 $ ssh bandit18@bandit.labs.overthewire.org -p 2220 "ls -las; cat readme .bashrc "
 ______________________________________________________________________________________________________________________________
 🧩 
@@ -19,3 +19,9 @@ _______________________Extra knowledge__________________________________________
 ✅ echo + OpenSSL s_client    =    “I am a network debugging tool. Whatever you send me, I encrypt and forward.”
 
 SSH ignores stdin for authentication, but openssl s_client can read stdin
+
+
+
+
+
+cGWpMaKXVwDUNgPAVJbWYuGHVn9zl3j8
