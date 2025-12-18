@@ -1,7 +1,7 @@
-ssh bandit18@bandit.labs.overthewire.org -p 2220 ls -las                     #  Log in -> execute ls -> then exit
-ssh bandit18@bandit.labs.overthewire.org -p 2220 cat readme                  #  Log in -> execute ls -> then exit
+ssh bandit18@bandit.labs.overthewire.org -p 2220 ls -las                            #  Log in -> execute ls -> then exit
+ssh bandit18@bandit.labs.overthewire.org -p 2220 cat readme                         #  Log in -> execute ls -> then exit
 
-$ ssh bandit18@bandit.labs.overthewire.org -p 2220 "ls -las; cat readme "
+$ ssh bandit18@bandit.labs.overthewire.org -p 2220 "ls -las; cat readme "           #  Log in -> execute ls -> then exit
 $ ssh bandit18@bandit.labs.overthewire.org -p 2220 "ls -las; cat readme .bashrc "
 ______________________________________________________________________________________________________________________________
 🧩 
