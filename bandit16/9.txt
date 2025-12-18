@@ -1,0 +1,35 @@
+
+$   for i in {31000..32000}; do
+    echo | timeout 1 openssl s_client -connect localhost:$i 2>/dev/null | grep -q "BEGIN CERTIFICATE" && echo "SSL on $i"
+    done
+
+$   nmap -p 31000-32000 localhost
+$   openssl s_client -connect localhost:31790 ❌  # can't read interactive stdin properly -> expects the password to arrive immediately on connection
+$   echo "kSkvUpMQ7lBYyCM4GBPvCvT1BfWRy0Dx" | openssl s_client -connect localhost:31790 -quiet ✅   # pipe the password directly into the SSL connection
+
+
+1️⃣ $     echo |
+openssl s_client waits for input (it expects you to type something).
+So:
+        ➡ Sends a blank input immediately
+        ➡ Prevents openssl from waiting forever
+
+2️⃣ $   timeout 1 COMMAND
+
+➡ Runs COMMAND
+➡ Kills it after 1 second
+
+
+3️⃣ 2>/dev/null
+1> → stdout (normal output)
+2> → stderr (errors)
+Throw away all error messages -> 🧠 Keeps output clean so grep works reliably
+
+
+4️⃣-q  → quiet mode
+
+
+openssl s_client -connect localhost:31518
+openssl s_client -connect localhost:31790
+
+kSkvUpMQ7lBYyCM4GBPvCvT1BfWRy0Dx
