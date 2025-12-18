@@ -6,7 +6,7 @@ $   for i in {31000..32000}; do
 $   nmap -p 31000-32000 localhost
 $   openssl s_client -connect localhost:31790 ❌  # can't read interactive stdin properly -> expects the password to arrive immediately on connection
 $   echo "kSkvUpMQ7lBYyCM4GBPvCvT1BfWRy0Dx" | openssl s_client -connect localhost:31790 -quiet             # check each PORT 1by1 now we are checking 31790   
-                                                                                                                    #  pipe the password directly into the SSL connection
+                                                                                                           #  pipe the password directly into the SSL connection
 
 
 1️⃣ $     echo |

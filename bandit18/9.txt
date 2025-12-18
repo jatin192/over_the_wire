@@ -1,0 +1,21 @@
+ssh bandit18@bandit.labs.overthewire.org ls                     #   Log in, execute ls, then exit
+ssh bandit18@bandit.labs.overthewire.org cat readme             #   Log in, execute cat readme, then exit
+
+$ ssh bandit18@bandit.labs.overthewire.org -p 2220 "ls -las; cat readme "
+$ ssh bandit18@bandit.labs.overthewire.org -p 2220 "ls -las; cat readme .bashrc "
+______________________________________________________________________________________________________________________________
+🧩 
+ssh user@host <command>   == Log in, execute <command>, then exit.
+
+_______________________Extra knowledge_____________________________________________________________________________________________________________
+
+❌  $   echo "x2gLTTjFwMOhQ8oWNbMN362QKxfRqGlO" | ssh bandit18@bandit.labs.overthewire.org cat readme   
+✅  $   echo "kSkvUpMQ7lBYyCM4GBPvCvT1BfWRy0Dx" | openssl s_client -connect localhost:31790 -quiet
+
+
+1️⃣ Think of it like this (mental model)
+
+❌ echo + SSH                 =    “I am a secure login system.Passwords only come from a real keyboard.”
+✅ echo + OpenSSL s_client    =    “I am a network debugging tool. Whatever you send me, I encrypt and forward.”
+
+SSH ignores stdin for authentication, but openssl s_client can read stdin

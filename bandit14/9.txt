@@ -1,3 +1,8 @@
+$   ssh -i sshkey.private bandit14@bandit.labs.overthewire.org -p 2220
+    or
+$   ssh bandit14@bandit.labs.overthewire.org -p 2220
+
+
 $   cat /etc/bandit_pass/bandit14
 $   nc localhost 30000
     MU4VWeTyJk8ROof1qqmcBPaLh7lDCPvS
@@ -7,7 +12,9 @@ $   nc localhost 30000
 8xCjnmgoKbGLhHFAZlGE5Tmu4M2tKJQo
 
 
+
 ______________________________________________________________________________________________________________________________
+
 nc = netcat
 nc <host> <port>
 

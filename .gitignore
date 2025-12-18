@@ -10,3 +10,5 @@
 id_rsa
 sshkey.private
 bandit13/sshkey.private
+bandit16/sshkey.private
+bandit17/sshkey.private
