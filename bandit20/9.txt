@@ -1,0 +1,46 @@
+Step 1  --> Hacker : “I’ll stand here and wait”
+            $   nc -l 127.0.0.1 1234
+
+Step 2  --> powerful program : “I need a service on localhost, let me connect”
+            $   ./suconnect 1234
+
+Step 3  --> The powerful program asks:
+            $   “What is the password?”
+
+Step 4  You answer correctly
+
+➡️ You never attacked it
+➡️ It came to you
+
+
+
+______________________________________________________________________________________________________________________________
+
+🔹 Two different roles in networking
+
+_______________nc -l 127.0.0.1 1234_________________vs__________________nc localhost 1234______________________
+
+Command_________________________Role_____________________________Meaning_______________________________________
+|                       |                              |
+| nc -l 127.0.0.1 1234	|       Server (listener)	   |        “Wait for someone to connect to me”
+| ______________________|______________________________|________________________________________________________
+| nc localhost 1234	    |       Client	               |        “Connect to a server already listening”
+|       or              |                              |    
+| nc -l 127.0.0.1 1234  |                              |    
+|_______________________|______________________________|________________________________________________________
+
+
+
+🔹 127.0.0.1                =   this same machine
+🔹 Command-line argument    =   input you pass to a program
+🔹 nc -l 127.0.0.1 1234     =   nc -l localhost 1234
+
+➡️“Localhost is safe” is a false assumption ❌
+
+
+❌ “I am the attacker → I connect to a powerful service → I steal data”
+✅ “I wait → the powerful program connects to ME”
+
+⚠️ Why this is EXTREMELY dangerous
+❌ Wrong assumption made by the program
+The program assumes:“If I connect to localhost, it must be safe”

@@ -30,3 +30,9 @@ Controlled Privilege Escalation (GOOD ✅)
 🧠 setuid allows a program to run with the permissions of its owner, enabling controlled privilege escalation for specific tasks
 
 ./ = run this executable from the current directory
+
+
+
+
+______________________________________________________________________________________________________________________________
+0qXahG8ZjOVMN9Ghs7iOWsCfZyXOUbYO
