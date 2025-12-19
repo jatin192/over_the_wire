@@ -1,5 +1,5 @@
 Step 1  --> Hacker : “I’ll stand here and wait”
-            $   nc -l 127.0.0.1 1234
+            $   nc -l localhot 1234
 
 Step 2  --> powerful program : “I need a service on localhost, let me connect”
             $   ./suconnect 1234
@@ -11,6 +11,14 @@ Step 4  You answer correctly
 
 ➡️ You never attacked it
 ➡️ It came to you
+
+| Thing             | Role   | Why            |
+| ----------------- | ------ | -------------- |
+| `nc -l`           | Server | It waits       |
+| `suconnect`       | Client | It connects    |
+| bandit20 password | Proof  | Identity check |
+| bandit21 password | Reward | Access         |
+
 
 
 
@@ -24,9 +32,7 @@ Command_________________________Role_____________________________Meaning________
 |                       |                              |
 | nc -l 127.0.0.1 1234	|       Server (listener)	   |        “Wait for someone to connect to me”
 | ______________________|______________________________|________________________________________________________
-| nc localhost 1234	    |       Client	               |        “Connect to a server already listening”
-|       or              |                              |    
-| nc -l 127.0.0.1 1234  |                              |    
+| nc localhost 1234	    |       Client	               |        “Connect to a server already listening”  
 |_______________________|______________________________|________________________________________________________
 
 
@@ -44,3 +50,58 @@ Command_________________________Role_____________________________Meaning________
 ⚠️ Why this is EXTREMELY dangerous
 ❌ Wrong assumption made by the program
 The program assumes:“If I connect to localhost, it must be safe”
+
+
+
+nc -l localhost 1234                        # Server (listener) 
+                                            # localhost/127.0.0.1 both are same
+                                            # -l → listen
+
+
+
+./suconnect 1234                            # Client 
+                                                               # Connect to a server already listening 
+
+
+
+ nc -l localhost 1234                        #  Server (listener) 
+                                                                #  localhost/127.0.0.1 both are same
+                                                                #  -l → listen
+
+
+______________________________________________________________________________________________________________________________
+
+EeoULMCra2q0dSkYj561DX7s1CpBuOBt
+_________________________________Confusion_____________________________________________________________________________________________
+
+
+1️⃣ Facebook login (NORMAL case – what you already know)
+
+Roles👉
+You (browser)   →   client
+Facebook        →   server
+
+Flow 👉
+You connect to Facebook
+Facebook says: “Enter your password”
+You type your FB password
+Password goes to Facebook
+Facebook verifies
+Facebook gives access (session / cookie)
+
+✅ Password goes client → server
+✅ Server recognizes you
+
+2️⃣ Bandit Level 20 (DIFFERENT but REAL model)
+Roles
+suconnect   →   client (it connects)
+nc -l       →   server (it waits)
+
+Now here is the key difference 👇
+
+🔑 WHO is being authenticated?
+Facebook:   👉 User is being authenticated
+Bandit:     👉 The thing suconnect connects to is being authenticated
+
+That’s it.
+This single sentence removes all confusion.
