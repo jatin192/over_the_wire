@@ -19,9 +19,6 @@ Step 4  You answer correctly
 | bandit20 password | Proof  | Identity check |
 | bandit21 password | Reward | Access         |
 
-
-
-
 ______________________________________________________________________________________________________________________________
 
 🔹 Two different roles in networking
