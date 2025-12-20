@@ -1,11 +1,9 @@
 #!/bin/bash
 
-myname=bandit24
+myname=$(whoami)
 
 cd /var/spool/$myname/foo
 echo "Executing and deleting all scripts in /var/spool/$myname/foo:"
-
-
 for i in * .*;
 do
     if [ "$i" != "." -a "$i" != ".." ];

@@ -1,0 +1,140 @@
+can't remove : Permission denied ??why??
+
+ls -las /usr/bin/cronjob_bandit24.sh
+PERMISSIONS      OWNER      GROUP       SIZE        DATE            FILENAME
+4 -rwxr-x--- 1   bandit24   bandit23    384         Oct 14 09:26    /usr/bin/cronjob_bandit24.sh
+
+$ pwd
+/etc/cron.d
+
+OWNER = bandit24 
+USER  = bandit23
+if [ "${owner}" = "bandit23" ]; failes  -----------> can't remove : Permission denied  
+
+
+
+/var/spool/$myname/foo
+
+Task : create /tmp/1.sh  -> +x -> execute
+
+
+_______________________________________________________________________________________________________________
+
+$   ls -las /usr/bin/cronjob_bandit24.sh
+    PERMISSIONS      OWNER      GROUP       SIZE        DATE            FILENAME
+    4 -rwxr-x--- 1   bandit24   bandit23    384         Oct 14 09:26    /usr/bin/cronjob_bandit24.sh
+
+$   pwd
+    /etc/cron.d
+
+
+$   cd /tmp ; cp /usr/bin/cronjob_bandit24.sh ./
+$   ls -las cronjob_bandit24.sh
+    PERMISSIONS      OWNER      GROUP       SIZE        DATE            FILENAME
+    4 -rwxr-x--- 1   bandit23   bandit23    384         Dec 20 08:05    cronjob_bandit24.sh
+
+$   pwd
+    /tmp
+
+
+myname="bandit24"
+
+
+/tmp/bandit24_pass
+
+
+
+
+
+YOU (bandit23)
+   ↓ drop file
+/var/spool/bandit24/foo
+   ↓ cron
+RUNS AS bandit24
+   ↓
+writes password to /tmp
+
+
+
+
+/usr/bin/cronjob_bandit24.sh
+
+
+owner = bandit24 its owner of file or folder?
+
+
+
+
+$   cp /usr/bin/cronjob_bandit24.sh payload.sh
+or 
+/tmp$   cp /usr/bin/cronjob_bandit24.sh bandit24_pass
+
+
+*************mtemp -d  ??????????????   vs temp    c
+
+
+
+
+/etc/bandit_pass/bandit24 
+
+
+
+/var/spool/$myname/foo
+
+cat /usr/bin/cronjob_bandit24.sh
+
+
+
+
+myname=$(whoami)
+cd /var/spool/$myname/foo
+if [ "${owner}" = "bandit23" ];
+
+whoami != owner right?
+owner is bandit23
+and whoami is bandit24 
+if yes
+but in /tmp whoami is 23 then how it is possibel that /var/spool/bandit24/foo whoami is 24 ?
+
+
+
+_______________________________________________________________________________________________________________
+
+whoami ≠ owner
+
+bandit23@bandit$ whoami
+bandit23
+
+What happens when CRON runs the script
+/usr/bin/cronjob_bandit24.sh AS USER bandit24
+whoami  → bandit24
+
+
+
+Thing	Value
+whoami	bandit24
+directory	/var/spool/bandit24/foo
+file owner	bandit23
+condition	TRUE
+
+✔️ Executed as bandit24
+✔️ File owned by bandit23
+
+bandit23 → can write files there
+bandit24 → executes them
+
+
+
+_______________________________________________________________________________________________________________
+
+[ YOU ] bandit23
+   |
+   |-- create payload.sh (owner = bandit23)
+   |-- copy to /var/spool/bandit24/foo
+   |
+[ CRON ] bandit24
+   |
+   |-- whoami = bandit24
+   |-- cd /var/spool/bandit24/foo
+   |-- sees file owned by bandit23
+   |-- executes it AS bandit24
