@@ -147,8 +147,10 @@ bandit23@bandit:/tmp$ ls
 ls: cannot open directory '.': Permission denied
 
 
-bandit23@bandit:/tmp/tmp.kurMrLYM6I$ ls
+band
+it23@bandit:/tmp/tmp.kurMrLYM6I$ ls
 1.sh
+
 
 
 
