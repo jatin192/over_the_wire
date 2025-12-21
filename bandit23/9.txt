@@ -164,4 +164,6 @@ it23@bandit:/tmp/tmp.kurMrLYM6I$ ls
 
 
 
+
+
 cat /tmp/bandit24/bandit24_password.txt
