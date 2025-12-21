@@ -152,4 +152,7 @@ bandit23@bandit:/tmp/tmp.kurMrLYM6I$ ls
 
 
 
-/tmp/bandit24/bandit24_password.txt
+
+
+
+cat /tmp/bandit24/bandit24_password.txt
