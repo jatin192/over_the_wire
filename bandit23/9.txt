@@ -148,6 +148,7 @@ ls: cannot open directory '.': Permission denied
 
 
 band
+
 it23@bandit:/tmp/tmp.kurMrLYM6I$ ls
 1.sh
 
