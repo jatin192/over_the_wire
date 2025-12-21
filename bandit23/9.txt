@@ -138,3 +138,18 @@ ________________________________________________________________________________
    |-- cd /var/spool/bandit24/foo
    |-- sees file owned by bandit23
    |-- executes it AS bandit24
+
+
+
+
+
+bandit23@bandit:/tmp$ ls
+ls: cannot open directory '.': Permission denied
+
+
+bandit23@bandit:/tmp/tmp.kurMrLYM6I$ ls
+1.sh
+
+
+
+/tmp/bandit24/bandit24_password.txt
