@@ -1,10 +1,12 @@
-✅ 
-❌
-➡️
-
-
 git clone ssh://bandit29-git@bandit.labs.overthewire.org:2220/home/bandit29-git/repo
+git log
+git show
+----Nothing found -----
+git branch -a
+✅ 
 
+
+qp30ex3VLz5MDG1n91YowTv4Q8l7CDZL
 
 🔑 One-line takeaway
-If a secret is not in the file, check Git history.
+If master is clean, check the branches
