@@ -15,8 +15,12 @@
     verfy: whoami
                         🔽
 🏁  Get the password for the next level
-    cat /etc/bandit_pass/bandit26
-s0773xxkk0MXfdqOfPRVr9L3jJBUOgCZ
+    $   ./bandit27-do cat /etc/bandit_pass/bandit27
+        upsNCc7vzaRDx6oZC6GiR6ERwe1MowGB
+
+    Additionally ,you can also got
+    $   cat /etc/bandit_pass/bandit26
+        s0773xxkk0MXfdqOfPRVr9L3jJBUOgCZ
 _______________________________________________________________________________________________________________
 
 ➡️ Why TERMINAL SIZE matters
