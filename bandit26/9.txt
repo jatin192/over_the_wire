@@ -91,3 +91,6 @@ bash is one specific shell
 — confusing them leads to broken security.
 
 ____________________________________________________________________________________________________________________
+-rwsr-x--- 1 bandit27 bandit26 bandit27-do
+   ^
+ setuid

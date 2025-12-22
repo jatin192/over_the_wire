@@ -1,1 +1,7 @@
-upsNCc7vzaRDx6oZC6GiR6ERwe1MowGB
+
+❌ git clone ssh://bandit27-git@bandit.labs.overthewire.org/home/bandit27-git/repo
+➡️ ssh://USERNAME@HOST:PORT/PATH
+✅ git clone ssh://bandit27-git@bandit.labs.overthewire.org:2220/home/bandit27-git/repo
+
+
+The password to the next level is: Yz9IpL0sBcCeuG7m9uQFt8ZNpS4HZRcN
