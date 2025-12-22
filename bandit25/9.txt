@@ -1,0 +1,20 @@
+
+
+
+$    ls -las bandit26.sshkey 
+    4 -rw-rw-r-- 1 azad azad 1678 Dec 22 22:38 bandit26.sshkey
+
+    Owner: read + write ✅
+    Group: read + write ❌
+    Others: read ❌
+
+
+
+
+
+$   chmod 600 bandit26.sshkey ; ls -las bandit26.sshkey 
+    4 -rw------- 1 azad azad 1678 Dec 22 22:38 bandit26.sshkey
+
+    Owner: read + write ✅
+    Group: no access ✅
+    Others: no access ✅
