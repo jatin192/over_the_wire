@@ -1,3 +1,15 @@
 ✅ 
 ❌
 ➡️
+
+git clone ssh://bandit30-git@bandit.labs.overthewire.org:2220/home/bandit30-git/repo
+
+
+🔑 One-line takeaway
+If files, history, and branches are clean → check tags.
+
+One-line memory trick 🧠
+Branch = moving pointer
+Tag = permanent sticker
+
+Security engineers always check tags
