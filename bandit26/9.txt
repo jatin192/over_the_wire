@@ -1,0 +1,89 @@
+
+1️⃣  Make your terminal SMALL
+    $   ssh -i bandit26@bandit.labs.overthewire.org  bandit26.sshkey -p 2220
+                        🔽
+🧨  You are now inside --More-- (a pager)
+                        🔽
+2️⃣  Press v to open the file in v1 editor
+                        🔽
+3️⃣  Escape to a real shell
+    :set shell=/bin/bash
+    :shell
+    Press Enter after each line
+                        🔽
+🎉  You now have a real shell as bandit26
+    verfy: whoami
+                        🔽
+🏁  Get the password for the next level
+    cat /etc/bandit_pass/bandit26
+s0773xxkk0MXfdqOfPRVr9L3jJBUOgCZ
+_______________________________________________________________________________________________________________
+
+➡️ Why TERMINAL SIZE matters
+    -   A terminal is not just text but it has dimensions:  Rows (height) , Columns (width)
+    -   Programs can ask the terminal: “How many lines can you display?”
+
+
+➡️ more is a pager. Its logic is roughly:
+        if  (file_lines > terminal_rows) {   show one screen + pause for user input  }
+        else                             {   show everything exit    }
+
+        _______________________________________________________
+        | Terminal size    |  Result                          |
+        | _________________|__________________________________|
+        | Big terminal     |  text fits → `more` exits        |
+        |__________________|__________________________________|
+        | Small terminal   |  text doesn’t fit → `more` waits |
+        |__________________|__________________________________|
+
+        🔑 Key insight
+        -   User interaction exists only if more pauses
+        -   No pause = no exploit.
+
+➡️  Why more is dangerous   =     because it is interactive and can execute other programs, 
+                                  which makes it effectively a shell
+
+
+➡️  Inside more, keys have special meaning.
+        v	=   key to open editor (“view in editor”)
+        vi  =   the editor program
+
+
+➡️  Why vi is even more dangerous
+    vi has a shell escape feature
+    vi == An editor + A command runner + A shell launcher
+
+
+vi uses a shell variable:   :   shell               (But sometimes the default shell is also restricted or fails)
+                            :   set shell=/bin/bash (When I ask for a shell, use /bin/bash)
+
+                            -   They are used to escape the fake/restricted login shell and 
+                                obtain a real interactive /bin/bash shell as bandit26
+
+
+
+
+🔑 Terminal size is input to program logic.
+🔑 more ≠ safe It’s interactive → dangerous.
+🔑 Editors are shells in disguise.
+❌ bash forbidden But ✅ vi allowed   = so it means =   ✅ bash allowed
+
+
+
+*********************************************************************************************
+Restricting a user’s shell is meaningless if the allowed program is interactive,            * 
+because any interactive process (like more or vi) can be escaped to a full shell.           *
+*********************************************************************************************
+
+restriction = policy
+vi = capability
+capability > policy
+__________________________________________________________________________________________________________________
+
+A user defines permissions, 
+a terminal provides interaction, 
+a shell interprets commands,
+bash is one specific shell 
+— confusing them leads to broken security.
+
+____________________________________________________________________________________________________________________

@@ -1,0 +1,40 @@
+➡️ Possibilities 10*10*10*10 
+
+$ nc localhost 30002                                                # just exploring
+
+➡️
+$   for i in {0..9}; do
+        for j in {0..9}; do
+            for k in {0..9}; do
+                for l in {0..9}; do
+                    echo "$(cat /tmp/bandit24/bandit24_password.txt) $i"    
+                done
+            done
+        done
+    done | nc localhost 30002                                       # password __space__ pin 
+
+➡️
+$   for i in $(seq -w 0 9999); do
+        echo "gb8KRRCsshuZXI0tUuR6ypOFjiZbf3G8 $i"
+    done | 
+    nc localhost 30002                                          # -w    =  --equal-width 2->2222      
+                                                                # password __space__ pin 
+
+
+➡️ echo "$(cat /tmp/bandit24/bandit24_password.txt) $i"    ===    echo "gb8KRRCsshuZXI0tUuR6ypOFjiZbf3G8 $i"
+
+_______________________________________________________________________________________________________________
+✅  iCi86ttT4KSNe1armKiwbQNmB3YJP3q4 
+
+for i in $(seq -w 0 9999); do
+        echo "gb8KRRCsshuZXI0tUuR6ypOFjiZbf3G8 $i"
+    done | 
+    nc localhost 30002                                              # password __space__ pin 
+
+
+
+     for i in $(seq -w 0 9999); do
+                       echo "gb8KRRCsshuZXI0tUuR6ypOFjiZbf3G8 $i"
+                   done | 
+                   nc localhost 30002                                               # -w    =  --equal-width 
+                                                                                    # password __space__ pin
