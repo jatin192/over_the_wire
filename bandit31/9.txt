@@ -1,3 +1,7 @@
-✅ 
-❌
-➡️
+$   git clone ssh://bandit31-git@bandit.labs.overthewire.org:2220/home/bandit31-git/repo
+then edit .gitignore
+$   nano key.txt 
+$   git add . ; git commit -m ".." ; git push origin master
+type bandit31 password
+
+3O9RfhqyAlVBEZpVb6LYStshZoqoSx5K ✅
