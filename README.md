@@ -5,5 +5,4 @@ based on my solutions.
 
 Readers are encouraged to attempt each challenge independently before referring 
 to these notes, as the learning value lies in the problem-solving process.
-<img width="100%" height="163" alt="image" src="https://github.com/user-attachments/assets/7ddfd9cc-359b-40aa-a8cc-b0ac34042f81" />
-<img width="100%" height="145" alt="image" src="https://github.com/user-attachments/assets/3f755654-f1ec-478a-b306-e8ac77429376" />
+<img width="1005" height="414" alt="image" src="https://github.com/user-attachments/assets/3678392d-cea7-4504-a7d4-2ba17b39666d" />
