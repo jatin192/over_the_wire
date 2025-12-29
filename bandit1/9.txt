@@ -1,3 +1,8 @@
+OverTheWire Bandit — Level 1
+===========================
+
+📂 Current Directory
+
 $ pwd
 /home/bandit1
 
@@ -7,72 +12,113 @@ $ ls
 $ pwd
 /home/bandit1
 
+________________________________________________________________________________________________________________________________________________________
+
+📄 Reading the File Named '-'
+
 $ cat /home/bandit1/-
 263JGJPfgU6LtdEvgfWU1XP5yac29mFx
 
 $ cat ./-
 263JGJPfgU6LtdEvgfWU1XP5yac29mFx
 
-$ cat "$(pwd)/-"                      
+$ cat "$(pwd)/-"
 263JGJPfgU6LtdEvgfWU1XP5yac29mFx
 
+________________________________________________________________________________________________________________________________________________________
 
-$ cat "-"                                      ❌  (Reason : see in bandit2)
-$ cat "./-"                                    ✅
+❌ Incorrect Command
+
+$ cat "-"
+Reason: '-' is treated as STDIN, not as a filename  
+(Explained further in Bandit Level 2)
+
+________________________________________________________________________________________________________________________________________________________
+
+✅ Correct Command
+
+$ cat "./-"
 263JGJPfgU6LtdEvgfWU1XP5yac29mFx
 
-____________________________________________________________ Learning ____________________________________________________________
+==================================================
+Learning
+==================================================
 
-Dashed filename     =   is simply a normal file whose name starts with a hyphen (-),
+📘 Dashed Filename
+
+A dashed filename is a normal file whose name starts with a hyphen (-).
+
+Examples:
 -
 -file
 --file
 
+Linux interprets anything starting with '-' as an option/flag,
+not as a filename.
 
-Linux thinks anything starting with - is an option/flag, not a filename.
--       =       STDIN / STDOUT         =        Input from keyboard -> Output to screen  (Not a file)
+________________________________________________________________________________________________________________________________________________________
 
+📌 Special Meanings
 
-.       =       current directory
-./-     =       exact path → Linux stops treating it like an option
+-  → STDIN / STDOUT  
+     Input from keyboard → Output to screen  
+     (Not a file)
 
+.  → Current directory
 
+./- → Explicit file path  
+      Linux stops treating it as an option
 
-Solution 
-Specify the full location of the file
-                                                    ******************************** 
-                                                    *       $ cat "$(pwd)/-"       *
-                                                    ********************************
+________________________________________________________________________________________________________________________________________________________
 
-_____________________________________________________ Dangerous Dashed Filenames ________________________________________________________
+✅ Solution
 
+Specify the full or explicit location of the file:
 
-🔥 1️⃣ File named -rf
+********************************
+*  $ cat \"$(pwd)/-\"           *
+********************************
 
-        If someone runs:  $ rm *      -----------------So the command becomes----------------->        $ rm -rf file1 file2
+==================================================
+Dangerous Dashed Filenames
+==================================================
 
-        -   This will recursively delete everything, and the user didn’t even type -rf.
-        -   This is how attackers wipe systems.
+🔥 1️⃣ File named `-rf`
 
+If someone runs:
+$ rm *
 
-🔥 2️⃣ File named --no-preserve-root
+Command becomes:
+$ rm -rf file1 file2
 
-        If someone runs:  $ rm *      -----------------So the command becomes----------------->        $ rm ---no-preserve-root
+- Recursive deletion without typing `-rf`
+- This is how attackers wipe systems
 
-        -   (--no-preserve-root) allows  $ rm -rf /   to delete root filesystem (normally blocked)
-        -   This is extremely dangerous.
-        -   Delete the entire filesystem including all user data + system files, effectively making the system unusable
+________________________________________________________________________________________________________________________________________________________
 
+🔥 2️⃣ File named `--no-preserve-root`
 
+If someone runs:
+$ rm *
 
-⚠️ Why these filenames are dangerous
+Command becomes:
+$ rm ---no-preserve-root
+
+- `--no-preserve-root` allows `rm -rf /`
+- Deletes the root filesystem
+- Deletes all user data and system files
+- System becomes unusable
+
+________________________________________________________________________________________________________________________________________________________
+
+⚠️ Why These Filenames Are Dangerous
 
 They can cause:
 
-✔ unintended command-line flags
-✔ data loss
-✔ system deletion
-✔ infinite loops
-✔ breaking backups
-✔ breaking deployment scripts
+✔ unintended command-line flags  
+✔ data loss  
+✔ system deletion  
+✔ infinite loops  
+✔ breaking backups  
+✔ breaking deployment scripts  
 ✔ turning harmless commands into destructive ones
