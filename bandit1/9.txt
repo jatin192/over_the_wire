@@ -12,7 +12,7 @@ $ ls
 $ pwd
 /home/bandit1
 
---------------------------------------------------
+________________________________________________________________________________________________________________________________________________________
 
 📄 Reading the File Named '-'
 
@@ -25,15 +25,15 @@ $ cat ./-
 $ cat "$(pwd)/-"
 263JGJPfgU6LtdEvgfWU1XP5yac29mFx
 
---------------------------------------------------
+________________________________________________________________________________________________________________________________________________________
 
 ❌ Incorrect Command
 
 $ cat "-"
-Reason: '-' is treated as STDIN, not as a filename
+Reason: '-' is treated as STDIN, not as a filename  
 (Explained further in Bandit Level 2)
 
---------------------------------------------------
+________________________________________________________________________________________________________________________________________________________
 
 ✅ Correct Command
 
@@ -56,7 +56,7 @@ Examples:
 Linux interprets anything starting with '-' as an option/flag,
 not as a filename.
 
---------------------------------------------------
+________________________________________________________________________________________________________________________________________________________
 
 📌 Special Meanings
 
@@ -69,7 +69,7 @@ not as a filename.
 ./- → Explicit file path  
       Linux stops treating it as an option
 
---------------------------------------------------
+________________________________________________________________________________________________________________________________________________________
 
 ✅ Solution
 
@@ -92,9 +92,9 @@ Command becomes:
 $ rm -rf file1 file2
 
 - Recursive deletion without typing `-rf`
-- Common technique used by attackers to wipe systems
+- This is how attackers wipe systems
 
---------------------------------------------------
+________________________________________________________________________________________________________________________________________________________
 
 🔥 2️⃣ File named `--no-preserve-root`
 
@@ -106,10 +106,10 @@ $ rm ---no-preserve-root
 
 - `--no-preserve-root` allows `rm -rf /`
 - Deletes the root filesystem
-- Removes all user data and system files
+- Deletes all user data and system files
 - System becomes unusable
 
---------------------------------------------------
+________________________________________________________________________________________________________________________________________________________
 
 ⚠️ Why These Filenames Are Dangerous
 
@@ -119,6 +119,6 @@ They can cause:
 ✔ data loss  
 ✔ system deletion  
 ✔ infinite loops  
-✔ broken backups  
-✔ broken deployment scripts  
-✔ harmless commands turning destructive
+✔ breaking backups  
+✔ breaking deployment scripts  
+✔ turning harmless commands into destructive ones
