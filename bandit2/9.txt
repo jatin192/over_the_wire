@@ -25,11 +25,11 @@ ______________________________________________ Learning ________________________
 -       \            Use to escape (space, special characters, or quotes, one by one)  +  Used outside quotes
 
 
-
 _______________________________________________ Tips __________________________________________________________________________________________________________
 
 -       ./ alone     DOES NOT fix spaces
 -       "./"         DOES.
 -       ./           also works with spaces, but ONLY if you combine it with quotes or \
+
 
 
