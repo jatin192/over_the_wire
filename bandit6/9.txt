@@ -1,9 +1,12 @@
 $   find / -type f -user bandit7 -group bandit6 -size 33c 2>/dev/null
-$   find / -type f -user bandit7 -group bandit6 -size 33c 2>/dev/null -exec cat {} \;
+$   find / -type f -user bandit7 -group bandit6 -size 33c -exec cat {} \; 2>/dev/null
 
     /           =   search entire filesystem
 
 
+
+$ find      <path>         <filters>                                                    <actions>
+$ find      /              -type f -user bandit7 -group bandit6 -size 33c               -exec cat {} \;          2>/dev/null
 
 
 What does 2>/dev/null do?       👉 suppress “permission denied” errors 👉 redirect error messages to /dev/null 👉 /dev/null = black hole (deletes anything written into it)
@@ -23,3 +26,5 @@ In Linux:
 
 1 = STDOUT → normal output
 2 = STDERR → error  output
+
+
