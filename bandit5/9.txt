@@ -1,7 +1,14 @@
 
+
+
 $ find . -type f -size 1033c ! -executable -exec file {} \;
 
 $ find . -type f -size 1033c ! -executable -exec cat {} \;
 
 HWasnPhtq9AVKe0dmk45nxy20cvUa6EG
 
+
+
+$ find      <path>          <filters>                               <actions>
+$ find        .            -type f -size 1033c ! -executable        -exec file {} \;
+$ find        .            -type f -size 1033c ! -executable        -exec cat {} \;
