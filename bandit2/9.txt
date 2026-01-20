@@ -24,7 +24,6 @@ ______________________________________________ Learning ________________________
 -       " "          only use to handle spaces in filenames
 -       \            Use to escape (space, special characters, or quotes, one by one)  +  Used outside quotes
 
-
 _______________________________________________ Tips __________________________________________________________________________________________________________
 
 -       ./ alone     DOES NOT fix spaces
