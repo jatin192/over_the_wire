@@ -9,6 +9,7 @@ $   sort data.txt | uniq -c | sort -n
 
 
 
+
 -u   --unique
 -c   --count
 -n   --numeric-sort
