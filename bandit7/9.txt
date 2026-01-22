@@ -6,6 +6,7 @@
 
 
 
+
 $   wc -l data.txt                               # Number of Rows/Line
 $   sed -n '1,10p' data.txt                      # understand structure
 $   grep -nHR "millionth" data.txt 
