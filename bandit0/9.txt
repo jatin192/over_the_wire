@@ -1,47 +1,15 @@
-OverTheWire Bandit — Level 0
-===========================
+$   ssh bandit0@bandit.labs.overthewire.org -p 2220
+    The password you are looking for is: ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If
+    ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If
 
-🎯 Objective
-Log in to the Bandit Level 0 server using SSH.
 
---------------------------------------------------
 
-🔑 Access Details
-Username : bandit0
-Host     : bandit.labs.overthewire.org
-Port     : 2220
-Password : ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If
+___________________________________________________ Learning ______________________________________________________________
 
---------------------------------------------------
+$ ssh username@remote_host -p 2220
 
-💻 Command Used (Specific)
-ssh bandit0@bandit.labs.overthewire.org -p 2220
 
---------------------------------------------------
+  ssh
 
-📌 General SSH Syntax
-ssh username@remote_host -p 2220
-
-Note:
-- `username`     → remote system user
-- `remote_host`  → server address (domain / IP)
-- `-p`           → specifies non-default SSH port
-
---------------------------------------------------
-
-📘 Definition — SSH (Secure Shell)
-Secure Shell is a protocol used to securely log onto remote systems.
-It can be used for logging or executing commands on a remote server.
-
---------------------------------------------------
-
-🧠 Learning Notes
-- `ssh` enables encrypted communication
-- Port `2220` is explicitly defined for Bandit
-- `man ssh` provides official command documentation
-- Press `q` to exit manual pages
-
---------------------------------------------------
-
-✅ Status
-Level 0 Completed ✔️
+  Secure Shell is a protocol used to securely log onto remote systems.
+  It can be used for logging or executing commands on a remote server
